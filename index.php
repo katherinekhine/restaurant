@@ -2,7 +2,7 @@
 include "components/header.php";
 ?>
 
-<h1>Menu List</h1>
+<h1 class="mt-3 ">Menu List</h1>
 
 <a href="menu-create.php" class="my-3 d-inline-block"><i class="bi bi-plus-circle-fill"></i> New Menu</a>
 

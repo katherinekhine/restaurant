@@ -16,6 +16,9 @@
     <!-- google icon cdn link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!-- remix icon link -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
     <!-- custom css link -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -23,12 +26,12 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-warning">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><i class="bi bi-cup-straw fs-3"></i>Foodie</a>
+            <a class="navbar-brand fs-4" href="#"><i class="ri-restaurant-2-fill fs-3"></i> The Golden Plate</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fs-5">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Booking</a>
                     </li>
@@ -38,7 +41,7 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-success" type="submit">Search</button>
                 </form>
             </div>
         </div>

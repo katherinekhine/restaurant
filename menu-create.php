@@ -8,8 +8,11 @@ include "components/header.php";
     <input type="number" name="price" class="form-control mb-3" placeholder="Price">
     <textarea name="detail" id="" placeholder="Detail About Item" class="form-control mb-3"></textarea>
     <input type="file" name="image" class="form-control mb-3">
-
-    <button type="submit" class="btn btn-primary">ADD New Item</button>
+    <div class="flex mt-4">
+        <a href="index.php" class="btn btn-secondary">
+            << Back</a>
+                <button type="submit" class="btn btn-primary">ADD New Item</button>
+    </div>
 </form>
 
 <?php
