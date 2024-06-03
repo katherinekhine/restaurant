@@ -16,4 +16,12 @@ class Menu extends Database
         ]);
         return $result->rowCount();
     }
+
+    public function all()
+    {
+        $query = "SELECT * FROM menu";
+        $result = $this->connect()->prepare($query);
+        $result->execute();
+        return $result->fetchAll();
+    }
 }
