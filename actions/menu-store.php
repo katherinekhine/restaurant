@@ -1,6 +1,9 @@
 <?php
 
-include "../classes/menu.php";
+include "../vendor/autoload.php";
+
+use classes\Menu;
+
 
 $title = htmlspecialchars(trim($_POST['title']));
 $price = htmlspecialchars(trim($_POST['price']));
@@ -13,7 +16,7 @@ if (empty($title) || empty($price) || empty($detail) || !is_uploaded_file($image
     $image_path = "photos/" . $image['name'];
     move_uploaded_file($image['tmp_name'], "../$image_path");
 
-    $menu = new Menu;
+    $menu = new Menu();
     $menu->store([
         'title' => $title,
         'price' => $price,

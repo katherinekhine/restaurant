@@ -1,6 +1,8 @@
 <?php
 
-include "../libs/database.php";
+namespace classes;
+
+use classes\Database;
 
 class Menu extends Database
 {
@@ -23,5 +25,14 @@ class Menu extends Database
         $result = $this->connect()->prepare($query);
         $result->execute();
         return $result->fetchAll();
+    }
+    public function show($id)
+    {
+        $query = "SELECT * FROM menu WHERE id = :id";
+        $result = $this->connect()->prepare($query);
+        $result->execute([
+            ':id' => $id
+        ]);
+        return $result->fetchObject();
     }
 }
