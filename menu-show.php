@@ -16,7 +16,7 @@ include "components/header.php";
 ?>
 
 
-<h1><?= $item->title ?></h1>
+<h1 class="mt-4"><?= $item->title ?></h1>
 
 <img src="<?= $item->image ?>" alt="" height="300rem" class="border border-5">
 

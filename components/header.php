@@ -1,3 +1,12 @@
+<?php
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +47,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Menu</a>
                     </li>
+                    <?php if (isset($_SESSION['admin'])) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php"><?= $_SESSION['name'] ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="actions/admin-logout.php">Logout</a>
+                        </li>
+                    <?php else : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php">Login</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
