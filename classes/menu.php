@@ -35,4 +35,16 @@ class Menu extends Database
         ]);
         return $result->fetchObject();
     }
+
+    public function update($data)
+    {
+        if ($data['image']) {
+            $query = "UPDATE menu SET title = :title, price = :price, image = :image, detail = :detail WHERE id = :id";
+        } else {
+            $query = "UPDATE menu SET title = :title, price = :price, detail = :detail WHERE id = :id";
+        }
+        $result = $this->connect()->prepare($query);
+        $result->execute($data);
+        return $result->rowCount();
+    }
 }
