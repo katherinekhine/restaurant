@@ -31,8 +31,9 @@ include "components/header.php";
                     <p> $ <?= $menu['price'] ?></p>
                     <p><i class="bi bi-cart-plus-fill"></i></p>
                     <p class="w-100">
-                        <a href="menu-show.php?id=<?= $menu['id'] ?>" class="btn btn-link border me-2"><i class="bi bi-eye-fill"></i>Show</a>
-                        <a href="menu-edit.php?id=<?= $menu['id'] ?>" class="btn btn-link border me-2"><i class="bi bi-pencil-square"></i>Edit</a>
+                        <a href="menu-show.php?id=<?= $menu['id'] ?>" class="btn btn-link border me-2"><i class="bi bi-eye-fill"></i></a>
+                        <a href="menu-edit.php?id=<?= $menu['id'] ?>" class="btn btn-link border me-2"><i class="bi bi-pencil-square"></i></a>
+                        <a href="actions/menu-delete.php?id=<?= $menu['id'] ?>" class="btn btn-link border me-2"><i class="bi bi-trash"></i></a>
                     </p>
                 </div>
             </div>

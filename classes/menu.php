@@ -47,4 +47,14 @@ class Menu extends Database
         $result->execute($data);
         return $result->rowCount();
     }
+
+    public function delete($id)
+    {
+        $query = "DELETE FROM menu WHERE id = :id";
+        $result = $this->connect()->prepare($query);
+        $result->execute([
+            ':id' => $id
+        ]);
+        return $result->rowCount();
+    }
 }
