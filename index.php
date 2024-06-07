@@ -13,21 +13,21 @@ $menus = $menus->all();
 include "components/header.php";
 ?>
 
-<h1 class="mt-3 ">Menu List</h1>
+<?php if (isset($_SESSION['admin'])) : ?>
+    <h1 class="mt-3 ">Menu List</h1>
 
-<a href="menu-create.php" class="my-3 d-inline-block"><i class="bi bi-plus-circle-fill"></i> New Menu</a>
+    <a href="menu-create.php" class="my-3 d-inline-block"><i class="bi bi-plus-circle-fill"></i> New Menu</a>
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-gap-5">
-    <?php foreach ($menus as $menu) : ?>
-        <div class="col">
-            <div class="card">
-                <img src="<?= $menu['image'] ?>" alt="" height="200rem" style="object-fit: cover;">
-                <div class="card-body">
-                    <p class="card-text">
-                        <?= $menu['title'] ?>
-                    </p>
-                </div>
-                <?php if (isset($_SESSION['admin'])) : ?>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-gap-5 mt-3">
+        <?php foreach ($menus as $menu) : ?>
+            <div class="col">
+                <div class="card">
+                    <img src="<?= $menu['image'] ?>" alt="" height="200rem" style="object-fit: cover;">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <?= $menu['title'] ?>
+                        </p>
+                    </div>
                     <div class="card-footer d-flex flex-wrap justify-content-between align-items-center">
                         <p> $ <?= $menu['price'] ?></p>
                         <p><i class="bi bi-cart-plus-fill"></i></p>
@@ -37,11 +37,27 @@ include "components/header.php";
                             <a href="actions/menu-delete.php?id=<?= $menu['id'] ?>" class="btn btn-link border me-2" onclick="return confirm('Are you sure you want to delete')"><i class=" bi bi-trash"></i></a>
                         </p>
                     </div>
-                <?php endif; ?>
+                </div>
             </div>
-        </div>
-    <?php endforeach; ?>
-</div>
+        <?php endforeach; ?>
+    </div>
+
+<?php else : ?>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-gap-5 mt-5">
+        <?php foreach ($menus as $menu) : ?>
+            <div class="col">
+                <div class="card">
+                    <img src="<?= $menu['image'] ?>" alt="" height="200rem" style="object-fit: cover;">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <?= $menu['title'] ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
 
 <?php
 include "components/footer.php";
