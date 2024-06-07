@@ -10,11 +10,13 @@ if (!isset($_SESSION)) {
 
 if (isset($_SESSION['admin'])) {
     $id = $_GET['id'];
-
-    $menu = new Menu();
-    $menu->delete($id);
-
-    header("location: ../index.php");
+    if (isset($id)) {
+        $menu = new Menu();
+        $menu->delete($id);
+        header("location: ../index.php");
+    } else {
+        echo "This is not a valid";
+    }
 } else {
-    header("location:../index.php");
+    echo "You are not allowed to delete this";
 }
