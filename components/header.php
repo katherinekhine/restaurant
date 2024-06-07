@@ -49,7 +49,7 @@ if (!isset($_SESSION)) {
                     </li>
                     <?php if (isset($_SESSION['admin'])) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.php"><?= $_SESSION['name'] ?></a>
+                            <a class="nav-link" href="#"><?= $_SESSION['name'] ?></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="actions/admin-logout.php">Logout</a>

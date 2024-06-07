@@ -4,9 +4,17 @@ include "../vendor/autoload.php";
 
 use classes\Menu;
 
-$id = $_GET['id'];
+if (!isset($_SESSION)) {
+    session_start();
+}
 
-$menu = new Menu();
-$menu->delete($id);
+if (isset($_SESSION['admin'])) {
+    $id = $_GET['id'];
 
-header("location: ../index.php");
+    $menu = new Menu();
+    $menu->delete($id);
+
+    header("location: ../index.php");
+} else {
+    header("location:../index.php");
+}
