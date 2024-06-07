@@ -34,7 +34,7 @@ include "components/header.php";
                         <p class="w-100">
                             <a href="menu-show.php?id=<?= $menu['id'] ?>" class="btn btn-link border me-2"><i class="bi bi-eye-fill"></i></a>
                             <a href="menu-edit.php?id=<?= $menu['id'] ?>" class="btn btn-link border me-2"><i class="bi bi-pencil-square"></i></a>
-                            <a href="actions/menu-delete.php?id=<?= $menu['id'] ?>" class="btn btn-link border me-2"><i class="bi bi-trash"></i></a>
+                            <a href="actions/menu-delete.php?id=<?= $menu['id'] ?>" class="btn btn-link border me-2" onclick="return confirm('Are you sure you want to delete')"><i class=" bi bi-trash"></i></a>
                         </p>
                     </div>
                 <?php endif; ?>
