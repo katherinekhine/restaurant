@@ -1,8 +1,13 @@
 <?php
 
+use classes\Cart;
+
 if (!isset($_SESSION)) {
     session_start();
 }
+
+$cart = new Cart();
+$count = $cart->countCart($_COOKIE['user_id']);
 
 ?>
 
@@ -59,6 +64,12 @@ if (!isset($_SESSION)) {
                             <a class="nav-link" href="login.php">Login</a>
                         </li>
                     <?php endif; ?>
+                    <li class="nav-item bg-success rounded rounded-3">
+                        <a href="user-cart-index.php" class="nav-link text-white">
+                            <i class="bi bi-bag-heart pe-2"></i>
+                            <span class="bg-white text-success p-1 badge"><?= $count ?></span>
+                        </a>
+                    </li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

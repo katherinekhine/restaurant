@@ -8,15 +8,20 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (isset($_SESSION['admin'])) {
+if (isset($_GET['id'])) {
+
     $id = $_GET['id'];
-    if (isset($id)) {
+
+    if (isset($_SESSION['admin'])) {
         $menu = new Menu();
-        $menu->delete($id);
-        header("location: ../index.php");
+        $item = $menu->show($id);
+        if ($item) {
+            $menu->delete($id);
+            header("location: ../index.php");
+        } else {
+            echo "This is not a valid";
+        }
     } else {
-        echo "This is not a valid";
+        echo "You are not allowed to delete this";
     }
-} else {
-    echo "You are not allowed to delete this";
 }
