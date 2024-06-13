@@ -1,5 +1,7 @@
 <?php
 
+include "vendor/autoload.php";
+
 use classes\Cart;
 
 if (!isset($_SESSION)) {
@@ -50,7 +52,7 @@ $count = $cart->countCart($_COOKIE['user_id']);
                         <a class="nav-link" href="#">Booking</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Menu</a>
+                        <a class="nav-link" href="index.php">Menu</a>
                     </li>
                     <?php if (isset($_SESSION['admin'])) : ?>
                         <li class="nav-item">

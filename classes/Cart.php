@@ -2,6 +2,8 @@
 
 namespace classes;
 
+use classes\Database;
+
 class Cart extends Database
 {
     public function store($data = [])
@@ -42,5 +44,16 @@ class Cart extends Database
             ':user_id' => $user_id
         ]);
         return $result->fetchAll();
+    }
+
+    public function cartDelete($user_id, $menu_id)
+    {
+        $query = "DELETE FROM carts WHERE user_id = :user_id AND menu_id = :menu_id";
+        $result = $this->connect()->prepare($query);
+        $result->execute([
+            ':user_id' => $user_id,
+            ':menu_id' => $menu_id
+        ]);
+        return $result->rowCount();
     }
 }
