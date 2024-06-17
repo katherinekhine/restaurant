@@ -16,4 +16,6 @@ $checkout->store([
 ]);
 
 
+setcookie('user_id', $_COOKIE['user_id'], time() - 1, "/restaurant");
+
 header('location: ../index.php');

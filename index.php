@@ -62,7 +62,7 @@ include "components/header.php";
                     </div>
                     <div class="card-footer d-flex flex-wrap justify-content-between align-items-center">
                         <p> $ <?= $menu['price'] ?></p>
-                        <?php if ($cart->checkCart($_COOKIE['user_id'], $menu['id'])) : ?>
+                        <?php if (isset($_COOKIE['user_id']) && $cart->checkCart($_COOKIE['user_id'], $menu['id'])) : ?>
                             <form action="actions/cart-delete.php" method="post">
                                 <input type="hidden" name="user_id" value="<?= $_COOKIE['user_id'] ?>">
                                 <input type="hidden" name="menu_id" value="<?= $menu['id'] ?>">

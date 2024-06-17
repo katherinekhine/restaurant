@@ -8,8 +8,13 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-$cart = new Cart();
-$count = $cart->countCart($_COOKIE['user_id']);
+
+if (isset($_COOKIE['user_id'])) {
+    $cart = new Cart();
+    $count = $cart->countCart($_COOKIE['user_id']);
+} else {
+    $count = 0;
+}
 
 ?>
 
