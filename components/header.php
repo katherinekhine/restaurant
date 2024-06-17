@@ -54,12 +54,12 @@ if (isset($_COOKIE['user_id'])) {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fs-5">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Booking</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="index.php">Menu</a>
                     </li>
                     <?php if (isset($_SESSION['admin'])) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="booking-index.php">Booking</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><?= $_SESSION['name'] ?></a>
                         </li>
@@ -67,6 +67,9 @@ if (isset($_COOKIE['user_id'])) {
                             <a class="nav-link" href="actions/admin-logout.php">Logout</a>
                         </li>
                     <?php else : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Booking</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="login.php">Login</a>
                         </li>

@@ -25,7 +25,7 @@ include "components/header.php";
 
     <a href="menu-create.php" class="my-3 d-inline-block"><i class="bi bi-plus-circle-fill"></i> New Menu</a>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-gap-5 mt-3">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-gap-5 mt-3 pb-4">
         <?php foreach ($menus as $menu) : ?>
             <div class="col">
                 <div class="card">
@@ -50,7 +50,7 @@ include "components/header.php";
     </div>
 
 <?php else : ?>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-gap-5 mt-3">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-gap-5 mt-3 pb-4">
         <?php foreach ($menus as $menu) : ?>
             <div class="col">
                 <div class="card">
